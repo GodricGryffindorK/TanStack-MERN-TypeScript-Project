@@ -32,7 +32,7 @@ const registerUser = (req, res) => __awaiter(void 0, void 0, void 0, function* (
     }
     catch (err) {
         console.log('Error: ' + err);
-        res.status(409).json({ error: 'account exists already' });
+        res.status(409).json('account exists already');
     }
 });
 exports.registerUser = registerUser;
@@ -61,7 +61,7 @@ const loginUser = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
             res.status(200).json({ message: 'account found', user: token, username: user.name.toLowerCase() });
         }
         else {
-            res.status(400).json({ error: 'incorrect password', user: false });
+            res.status(400).json('incorrect password');
         }
     }
     catch (err) {

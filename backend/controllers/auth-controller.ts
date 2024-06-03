@@ -21,7 +21,7 @@ export const registerUser = async (req: Request, res: Response): Promise<void> =
 
     } catch (err) {
         console.log('Error: ' + err);
-        res.status(409).json({ error: 'account exists already' })
+        res.status(409).json('account exists already')
     }
 }
 
@@ -53,7 +53,7 @@ export const loginUser = async (req: Request, res: Response): Promise<void> => {
             );
             res.status(200).json({ message: 'account found', user: token, username: user!.name.toLowerCase() });
         } else {
-            res.status(400).json({ error: 'incorrect password', user: false });
+            res.status(400).json('incorrect password');
         }
     } catch (err) {
         console.log('Error: ' + err);

@@ -5,7 +5,7 @@ import {
   createBrowserRouter,
   RouterProvider
 } from 'react-router-dom';
-
+import ReactQueryProvider from './TanStackProvider';
 import { Error } from './pages/Error';
 import { Index } from './pages/Index';
 import { Login } from './pages/Login';
@@ -30,6 +30,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <ReactQueryProvider>
+      <RouterProvider router={router} />
+    </ReactQueryProvider>
   </React.StrictMode>
 )
